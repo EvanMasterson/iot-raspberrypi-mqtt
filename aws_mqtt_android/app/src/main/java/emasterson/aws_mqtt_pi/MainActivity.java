@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     // IoT endpoint
     // AWS Iot CLI describe-endpoint call returns: XXXXXXXXXX.iot.<region>.amazonaws.com
-    private static final String CUSTOMER_SPECIFIC_ENDPOINT = "a164yy2at6xf6r.iot.eu-west-1.amazonaws.com";
+    private static final String CUSTOMER_SPECIFIC_ENDPOINT = "";
     // Cognito pool ID. For this app, pool needs to be unauthenticated pool with
     // AWS IoT permissions.
-    private static final String COGNITO_POOL_ID = "eu-west-1:a0b41557-d133-4710-86cb-fb2a402adb08";
+    private static final String COGNITO_POOL_ID = "";
     // Name of the AWS IoT policy to attach to a newly created certificate
     private static final String AWS_IOT_POLICY_NAME = "mqtt_policy";
     // Region of AWS IoT
