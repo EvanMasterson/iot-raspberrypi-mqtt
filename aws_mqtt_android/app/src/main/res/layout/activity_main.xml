@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="emasterson.aws_mqtt_pi.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvClientId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Disconnected"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvClientId" />
+
+            <ToggleButton
+                android:id="@+id/btnConnect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="Connect/Disconnect"
+                android:textOn="Connect/Disconnect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+            <EditText
+                android:id="@+id/txtSubscribe"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Topic name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
+
+            <ToggleButton
+                android:id="@+id/btnSubscribe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textOn="Subscribe/Unsubscribe"
+                android:textOff="Subscribe/Unsubscribe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSubscribe" />
+
+            <TextView
+                android:id="@+id/tvLastMessage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Unsubscribed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSubscribe" />
+
+            <ToggleButton
+                android:id="@+id/btnLed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="Led On/Off"
+                android:textOn="Led On/Off"
+                app:layout_constraintEnd_toStartOf="@+id/tvLed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastMessage" />
+
+            <TextView
+                android:id="@+id/tvLed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnTemp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnLed"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastMessage" />
+
+            <ToggleButton
+                android:id="@+id/btnTemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="Temp On/Off"
+                android:textOn="Temp On/Off"
+                app:layout_constraintEnd_toStartOf="@+id/tvTemp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLed" />
+
+            <TextView
+                android:id="@+id/tvTemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnHum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnTemp"
+                app:layout_constraintTop_toTopOf="@+id/btnTemp" />
+
+            <ToggleButton
+                android:id="@+id/btnHum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="Humidity On/Off"
+                android:textOn="Humidity On/Off"
+                app:layout_constraintEnd_toStartOf="@+id/tvHum"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTemp" />
+
+            <TextView
+                android:id="@+id/tvHum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnBuzzer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnHum"
+                app:layout_constraintTop_toBottomOf="@+id/btnTemp" />
+
+            <ToggleButton
+                android:id="@+id/btnBuzzer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="Buzzer On/Off"
+                android:textOn="Buzzer On/Off"
+                app:layout_constraintEnd_toStartOf="@+id/tvBuzzer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnHum" />
+
+            <TextView
+                android:id="@+id/tvBuzzer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnSound"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnBuzzer"
+                app:layout_constraintTop_toBottomOf="@+id/btnHum" />
+
+            <ToggleButton
+                android:id="@+id/btnSound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="Sound On/Off"
+                android:textOn="Sound On/Off"
+                app:layout_constraintEnd_toStartOf="@+id/tvSound"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBuzzer" />
+
+            <TextView
+                android:id="@+id/tvSound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnAll"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnSound"
+                app:layout_constraintTop_toBottomOf="@+id/btnBuzzer" />
+
+            <ToggleButton
+                android:id="@+id/btnAll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:textOff="All On/Off"
+                android:textOn="All On/Off"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSound" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:max="100"
+                android:progress="30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAll" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
